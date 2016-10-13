@@ -1,0 +1,76 @@
+/* FONTS */
+@font-face
+{
+    font-family: HelveticaNeu;
+    src: url("../fonts/HelveticaNeu.otf") format("opentype");
+}
+@font-face 
+{
+	font-family: "segoe";
+	src: url("../fonts/segoe.eot"); /* IE */  
+	src: local("Segoe UI"), url("../fonts/segoe.ttf") format("truetype"); /* non-IE */  
+}
+	
+@font-face 
+{
+	font-family: "segoel";
+	src: url("../fonts/segoel.eot"); /* IE */  
+	src: local("Segoe UI Light"), url("../fonts/segoel.ttf") format("truetype"); /* non-IE */  
+}
+	
+
+/* GENERAL */
+body
+{
+    background-image: url("../img/background.png");
+    margin: 0px 0px 0px 0px;
+    font-family: 'HelveticaNeu', 'Arial'
+}
+
+
+
+/* BOOTSTRAP DEFAULT OVERRIDE */
+.navbar-default {
+    border: 0px;
+}
+
+
+/* MY CSS */
+.darkbar
+{
+    background-color: #424242;
+    height: 70px;
+}
+.infobar
+{
+    margin-top: -20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-top: 4px;
+    height: 30px;
+    opacity: 0.6;
+    width: 100%;
+    background-color: #3caaff;
+    color: white;
+    font-size: 15px;
+    font-family: segoel;
+}
+
+#lineuplogo
+{
+    margin-top: 4px;
+    margin-left: 10px;
+}
+
+#overcontainer
+{
+    height: 100px;
+}
+
+#undercontainer
+{
+    border-top: 1px solid #89cbfe;
+    background-image: url("../img/transpback.png");
+    background-repeat: repeat-x;
+    min-height: 500px;
+}
