@@ -7,44 +7,60 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- CSS And JavaScript -->
 </head>
 
 <body>
 
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid darkbar">
+<!-- NAVBAR -->
+<nav class="navbar navbar-default darkbar" role="navigation">
     <div class="navbar-header">
-      <a class="navbar-brand" href="http://lineup.dev">
-        <img id="lineuplogo" alt="Brand" src="img/thelineup.png">
-      </a>
+        <a class="navbar-brand" href="http://lineup.dev">
+            <img id="lineuplogo" alt="Brand" src="img/lineuplogo.png">
+        </a>
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse" style="border-color: gray; margin-top: 18px;">
+            <span class = "icon-bar"></span>
+            <span class = "icon-bar"></span>
+            <span class = "icon-bar"></span>
+        </button> 
     </div>
-  </div>
-  
+   
+    <div class = "collapse navbar-collapse" id = "example-navbar-collapse">
+        <ul class = "nav navbar-nav navbar-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Logout</a></li>	
+        </ul>
+   </div>
 </nav>
+
+<!-- INFOBAR -->
 <div class="infobar">Logged in as: Test User</div>
 
+<!-- OVER CONTAINER -->
 <div class="container-fluid" id="overcontainer">
-  
-  <div class="row">
-    <div class="col-sm-5 timer">
-      21:22
+    <div class="row">
+        <div class="col-sm-5 timer">
+            21:22
 
+        </div>
+        <div class="col-sm-2 hidden-xs">
+            <div id="timePentagon">
+            2016<br />
+            2017
+            </div>
+        </div>
+        <div class="col-sm-5 datum">
+        14.10.2016
+        </div>
     </div>
-    <div class="col-sm-2 hidden-xs">
-      <div id="timePentagon">
-        2016<br />
-        2017
-      </div>
-    </div>
-    <div class="col-sm-5 datum">
-      14.10.2016
-    </div>
-  </div>
-  
 </div>
-<div class="container-fluid" id="undercontainer"></div>
-<p style="font-size: 33px;"></p>
+
+<!-- UNDER CONTAINER -->
+<div class="container-fluid" id="undercontainer">
+
+
+</div>
+
 </body>
 </html>

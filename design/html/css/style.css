@@ -26,14 +26,41 @@ body
     background-repeat: repeat-x;
     margin: 0px 0px 0px 0px;
     font-family: 'HelveticaNeu', 'Arial';
-    background-color: lightgray;
+    background-color: #ebebeb;
 }
+
 
 /* BOOTSTRAP DEFAULT OVERRIDE */
-.navbar-default {
+.navbar-default 
+{
     border: 0px;
+    background-color: #424242;
+    border-radius: 0px;
 }
 
+.navbar-nav li a {
+    line-height: 70px;
+    height: 70px;
+    padding-top: 0;
+    font-family: segoe;
+}
+.nav.navbar-nav.navbar-right a 
+{
+    color: white;
+}
+.nav.navbar-nav.navbar-right a:hover
+{
+    color: white;
+}
+.nav.navbar-nav.navbar-right .active a 
+ {
+    background: #85cafe;
+    color: white;
+ }
+.navbar-brand
+{
+    height: 70px;
+}
 .col-centered
 {
     float: none;
@@ -42,11 +69,6 @@ body
 
 
 /* MY CSS */
-.darkbar
-{
-    background-color: #424242;
-    height: 70px;
-}
 .infobar
 {
     margin-top: -20px;
@@ -63,7 +85,7 @@ body
 
 #lineuplogo
 {
-    margin-top: 4px;
+    margin-top: 0px;
     margin-left: 10px;
 }
 
