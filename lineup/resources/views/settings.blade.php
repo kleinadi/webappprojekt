@@ -5,8 +5,6 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-
-
             <h1>Settings</h1>
 
             <div class="container">
@@ -15,19 +13,37 @@
             </div>
 
             <div class="panel panel-default">
-                <div class="panel-heading">Add Module</div>
+                <div class="panel-heading">
+                    Add Module
+                </div>
 
                 <div class="panel-body">
-                    Search modules
-                    <input type="text" name="moduleSearch" id="module-search" class="form-control">
+
+                    <div id="custom-search-input">
+                        <div class="input-group col-md-12">
+                            <input type="text" class="form-control " id="module-search" placeholder="Search Modules" />
+
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div id="ajaxLiveList">
+
+                    </div>
+
                 </div>
-                <script type="text/javascript" language="javascript">
-                    $("#module-search").keyup(function()
-                    {
-                        console.log("Here i am");
-                    })
-                </script>
+
+
             </div>
         </div>
     </div>
+
+    <script language="javascript">
+        var moduleFinder = new ModuleFinder();
+    </script>
+
 @endsection

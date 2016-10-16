@@ -19,4 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/settings', 'SettingsController@index');
+Route::get('/settings', 'SettingsController@showView');
+
+Route::get('/getModuleList/{moduleName}', 'SettingsController@moduleList');
