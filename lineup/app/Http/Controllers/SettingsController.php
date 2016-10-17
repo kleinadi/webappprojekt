@@ -38,7 +38,7 @@ class SettingsController extends Controller
          */
 
         $modules = new Module;
-        $modules = $modules->where('description', 'LIKE', '%'.$moduleName.'%')->get();
+        $modules = $modules->where('fullname', 'LIKE', '%'.$moduleName.'%')->get();
         return $modules->toJson();
     }
 
@@ -65,19 +65,19 @@ class SettingsController extends Controller
 
         $modules = new Module;
         $modules->name = "IUK_W";
-        $modules->description = "Webapplikationen";
+        $modules->fullname = "Webapplikationen";
         $modules->professor = "Browser";
         $modules->save();
 
         $modules = new Module;
         $modules->name = "IUK_H";
-        $modules->description = "Web Programmierung";
+        $modules->fullname = "Web Programmierung";
         $modules->professor = "Browser";
         $modules->save();
 
         $modules = new Module;
         $modules->name = "KOM_III";
-        $modules->description = "Kommunikation";
+        $modules->fullname = "Kommunikation";
         $modules->professor = "Prete";
         $modules->save();
 

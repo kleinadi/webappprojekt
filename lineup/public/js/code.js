@@ -35,7 +35,7 @@ var ModuleFinder = function()
             {
                 var row =
                     '<tr>' +
-                        '<td class="table-text"><div>'+jsonOb[i].name+'</div></td>' +
+                        '<td class="table-text"><div>'+jsonOb[i].fullname+'</div></td>' +
                         '<td align="right">' +
                             '<form action="/task/'+jsonOb[i].id+'" method="GET">' +
                             '<button type="submit" class="btn btn-danger" >Delete Task</button></form>' +
