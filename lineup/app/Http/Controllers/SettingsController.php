@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Module;
+use DB;
 
 class SettingsController extends Controller
 {
@@ -33,10 +34,11 @@ class SettingsController extends Controller
     public function getModuleList($moduleName)
     {
         /**
-         * TODO: Maybe change description to longName or so in the DB
+         * TODO: Change description to longName and moduleday o moduletime in the DB
          */
+
         $modules = new Module;
-        $modules = $modules->where('name', 'LIKE', '%'.$moduleName.'%')->get();
+        $modules = $modules->where('description', 'LIKE', '%'.$moduleName.'%')->get();
         return $modules->toJson();
     }
 
@@ -45,15 +47,31 @@ class SettingsController extends Controller
      */
     public function populateDummy()
     {
+        DB::statement("SET foreign_key_checks=0");
+        Module::truncate();
+        DB::statement("SET foreign_key_checks=1");
+
         $modules = new Module;
         $modules->name = "BIM";
-        $modules->description = "Betriebsinformation Management";
+        $modules->fullname = "Betriebsinformation Management";
         $modules->professor = "Cavala";
         $modules->save();
 
         $modules = new Module;
         $modules->name = "IUK_U";
-        $modules->description = "Unix";
+        $modules->fullname = "Unix";
+        $modules->professor = "Browser";
+        $modules->save();
+
+        $modules = new Module;
+        $modules->name = "IUK_W";
+        $modules->description = "Webapplikationen";
+        $modules->professor = "Browser";
+        $modules->save();
+
+        $modules = new Module;
+        $modules->name = "IUK_H";
+        $modules->description = "Web Programmierung";
         $modules->professor = "Browser";
         $modules->save();
 

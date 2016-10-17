@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateModuledayTable extends Migration
+class CreateModuletimeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateModuledayTable extends Migration
      */
     public function up()
     {
-        Schema::create('moduleday', function (Blueprint $table) {
+        Schema::create('moduletime', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('timerange');
             $table->integer('day');
@@ -30,6 +30,6 @@ class CreateModuledayTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('moduleday');
+        Schema::dropIfExists('moduletime');
     }
 }
