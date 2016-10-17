@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Module;
+use DB;
 
 class SettingsController extends Controller
 {
@@ -31,14 +33,55 @@ class SettingsController extends Controller
      */
     public function getModuleList($moduleName)
     {
-        /*
-         * TODO: Add Module Model
-         *    $modules = new Module;
-         *    $modules = $modules->where('name', 'LIKE', '%'.$moduleName.'%')->get();
-         *    return $modules->toJson();
+        /**
+         * TODO: Change description to longName and moduleday o moduletime in the DB
          */
 
-        return "";
+        $modules = new Module;
+        $modules = $modules->where('fullname', 'LIKE', '%'.$moduleName.'%')->get();
+        return $modules->toJson();
+    }
+
+    /**
+     * Test function for filling the db with some data
+     */
+    public function populateDummy()
+    {
+        DB::statement("SET foreign_key_checks=0");
+        Module::truncate();
+        DB::statement("SET foreign_key_checks=1");
+
+        $modules = new Module;
+        $modules->name = "BIM";
+        $modules->fullname = "Betriebsinformation Management";
+        $modules->professor = "Cavala";
+        $modules->save();
+
+        $modules = new Module;
+        $modules->name = "IUK_U";
+        $modules->fullname = "Unix";
+        $modules->professor = "Browser";
+        $modules->save();
+
+        $modules = new Module;
+        $modules->name = "IUK_W";
+        $modules->fullname = "Webapplikationen";
+        $modules->professor = "Browser";
+        $modules->save();
+
+        $modules = new Module;
+        $modules->name = "IUK_H";
+        $modules->fullname = "Web Programmierung";
+        $modules->professor = "Browser";
+        $modules->save();
+
+        $modules = new Module;
+        $modules->name = "KOM_III";
+        $modules->fullname = "Kommunikation";
+        $modules->professor = "Prete";
+        $modules->save();
+
+        return $this->showView();
     }
 
 }
