@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/clock.css">
     <script src="js/code.js"></script>
+    <script src="js/clock.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -35,20 +37,47 @@
 </nav>
 
 <!-- OVER CONTAINER -->
-<div class="container-fluid" id="overcontainer">
+<div class="container-fluid" id="overcontainer" style="margin-bottom: 27px;">
     <div class="row">
         <div class="col-sm-5 timer">
-            21:22
+
+            <div id="digiClock">00:00:00</div>
+            <script >
+                // Init DigiClock
+                digiClock();
+            </script>
 
         </div>
         <div class="col-sm-2 hidden-xs">
-            <div id="timePentagon">
-            2016<br />
-            2017
+
+            <div id="clockContainer">
+
+                <article class="clock">
+                    <div class="hours-container">
+                        <div class="hours"></div>
+                    </div>
+                    <div class="minutes-container">
+                        <div class="minutes"></div>
+                    </div>
+                    <div class="seconds-container">
+                        <div class="seconds"></div>
+                    </div>
+                </article>
             </div>
+            <script >
+                // Init Clock
+                initLocalClocks();
+                setUpMinuteHands();
+                moveSecondHands();
+            </script>
+
         </div>
         <div class="col-sm-5 datum">
-        14.10.2016
+            <div id="showDate">00.00.00</div>
+            <script >
+                // Init DigiClock
+                printDate();
+            </script>
         </div>
     </div>
 </div>

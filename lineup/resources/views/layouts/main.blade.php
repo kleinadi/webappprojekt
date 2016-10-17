@@ -85,19 +85,13 @@
                 moveSecondHands();
             </script>
 
-            <!-- <div id="timePentagon">
-            2016<br />
-            2017
-            </div> -->
-
-
         </div>
         <div class="col-sm-5 datum">
-        <div id="showDate">00.00.00</div>
-        <script >
-            // Init DigiClock
-            printDate();
-        </script>
+            <div id="showDate">00.00.00</div>
+            <script >
+                // Init DigiClock
+                printDate();
+            </script>
         </div>
     </div>
 </div>
