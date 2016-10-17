@@ -22,3 +22,6 @@ Route::get('/home', 'HomeController@index');
 Route::get('/settings', 'SettingsController@showView');
 
 Route::get('/getModuleList/{moduleName}', 'SettingsController@moduleList');
+
+// Dummy
+Route::get('/populate', 'SettingsController@populateDummy');

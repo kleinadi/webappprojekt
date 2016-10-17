@@ -17,8 +17,9 @@ class CreateModuleTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description');
-            $table->string('professor');
-            $table->string('room');
+            $table->string('professor')->nullable();
+            $table->string('room')->nullable();
+            $table->timestamps();
         });
     }
 

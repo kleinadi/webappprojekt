@@ -19,6 +19,7 @@ class CreateUsermoduleTable extends Migration
             $table->foreign('fk_users')->references('id')->on('users');
             $table->integer('fk_module')->unsigned();
             $table->foreign('fk_module')->references('id')->on('module');
+            $table->timestamps();
         });
     }
 

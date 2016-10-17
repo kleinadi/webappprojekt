@@ -16,10 +16,10 @@ class CreateModuledayTable extends Migration
         Schema::create('moduleday', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('timerange');
+            $table->integer('day');
             $table->integer('fk_module')->unsigned();
             $table->foreign('fk_module')->references('id')->on('module');
-            $table->integer('fk_day')->unsigned();
-            $table->foreign('fk_day')->references('id')->on('day');
+            $table->timestamps();
         });
     }
 
