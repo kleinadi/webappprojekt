@@ -48,7 +48,9 @@
 </nav>
 
 <!-- INFOBAR -->
-<div class="infobar">Logged in as: Test User</div>
+<div class="infobar">
+        You are logged in as: {{ Auth::user()->name }}
+</div>
 
 <!-- OVER CONTAINER -->
 <div class="container-fluid" id="overcontainer">
