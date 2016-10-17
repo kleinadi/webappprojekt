@@ -30,7 +30,17 @@
         <ul class = "nav navbar-nav navbar-right">
             <li><a href="/home">Home</a></li>
             <li><a href="/settings">Settings</a></li>
-            <li><a href="#">Logout</a></li>	
+            <li>
+                <a href="{{ url('/logout') }}"
+                    onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                    Logout
+                </a>
+
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
         </ul>
    </div>
 </nav>
