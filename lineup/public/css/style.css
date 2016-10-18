@@ -122,7 +122,10 @@ h1
     padding-left: 3px;
 }
 
-
+#clockContainer
+{
+    margin: 0 auto;
+}
 
 @media(min-width: 768px)
 {
@@ -130,13 +133,13 @@ h1
     {
         font-family: 'HelveticaNeu';
         font-size: 60px;
-        text-align: right;   
+        text-align: right;
     }
     .datum
     {
         font-family: 'HelveticaNeu';
         font-size: 60px;
-        text-align: left; 
+        text-align: left;
     }
 }
 
@@ -153,7 +156,8 @@ h1
     .datum
     {
         font-family: 'HelveticaNeu';
-        font-size: 20px;
+        font-size: 22px;
         text-align: center; 
     }
 }
+
