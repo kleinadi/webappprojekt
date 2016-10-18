@@ -1,0 +1,34 @@
+@media(max-width: 1200px)
+{
+    #panel1
+    {
+        background-color: #00b3ee;
+    }
+    div.myClass {
+        overflow-x: auto;  white-space: nowrap;
+    }
+    div.myClass [class*="col"], /* TWBS v3 */
+    div.myClass [class*="span"] {  /* TWBS v2 */
+        display: inline-block;  float: none; /* Very important */
+    }
+
+    #columnscroll{
+        overflow-x: auto;
+        white-space: nowrap;
+
+     }
+
+    .rawscroll{
+        display: inline-block;
+        float: none;
+        background-color: #00AA88;
+    }
+
+    .panelboarder{
+        background-color: #aa2c5a;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+
