@@ -73,24 +73,34 @@
 
                         </div>
 
-                        <div class="form-group">
+                        <div id="timeDropdowns">
                             <div class="form-group">
-                                <label for="sel1">Times:</label>
-                                <select class="form-control" id="sel1">
-                                    <option>Select Day</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
+                                <div class="form-group">
+                                    <label for="sel1">Times:</label>
+                                    <select class="form-control" id="day0" onchange="addInputField(1);">
+                                        <option value="null">Select Day</option>
+                                        <option value="1">Monday</option>
+                                        <option value="2">Tuesday</option>
+                                        <option value="3">Wednesday</option>
+                                        <option value="3">Thursday</option>
+                                        <option value="3">Friday</option>
+                                        <option value="3">Sat</option>
+                                    </select>
 
-                                <select class="form-control" id="sel1">
-                                    <option>Select Time</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
+                                    <select class="form-control" id="time0" onchange="addInputField(1);">
+                                        <option value="null">Select Time</option>
+                                        <option value="1">08:15 - 09:50</option>
+                                        <option value="3">10:10 - 11:45</option>
+                                        <option value="2">13:15 - 14:50</option>
+                                        <option value="2">15:15 - 16:50</option>
+                                        <option value="2">17:00 - 19:45</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
+
+
+
 
 
                         <div class="form-group">
