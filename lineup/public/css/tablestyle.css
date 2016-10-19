@@ -1,43 +1,33 @@
-@media(max-width: 1500px)
-{
-    #columnscroll{
-        overflow-x: auto;
-        white-space: nowrap;
-     }
-    .rawscroll{
-        display: inline-block;
-        float: none;
-    }
-
-
-}
-
+/* DESKTOP VERSION */
 #timeraw{
-    min-width:115px;
+    min-width:120px;
 }
 
 .panelspacing{
     padding-left: 2px;
     padding-right: 2px;
 
-    min-width: 200px;
-}
-
-.modulepane{
 }
 
 .rawspacing{
     margin-bottom: 5px;
     border-radius: 0px;
+    height: 80px;
 }
 
 .invisiblepanel{
     background-color: transparent;
     border-color: transparent;
+    display: flex;
+    align-items: center;
+}
+.invisiblepanel .panel-body
+{
+    margin: auto;
 }
 
 .bluepanel{
-    background-color: #3caaff;
+    background-color: #72b1ff;
 }
 
 #breakbar{
@@ -45,4 +35,15 @@
     height: 20px;
 }
 
+
+/* MOBILE VERSION */
+.scheduleTable
+{
+    width: 100%;
+}
+
+.scheduleTable .timeCol
+{
+    width: 60px;
+}
 
