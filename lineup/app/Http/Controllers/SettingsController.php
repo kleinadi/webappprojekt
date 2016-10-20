@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Module;
 use App\UserModule;
+use App\ModuleTime;
 use DB;
 
 class SettingsController extends Controller
@@ -51,6 +52,7 @@ class SettingsController extends Controller
         DB::statement("SET foreign_key_checks=0");
         Module::truncate();
         UserModule::truncate();
+        ModuleTime::truncate();
         DB::statement("SET foreign_key_checks=1");
 
         $modules = new Module;
@@ -102,6 +104,37 @@ class SettingsController extends Controller
         $usermodule->fk_users = 1;
         $usermodule->fk_module = 5;
         $usermodule->save();
+
+        $usermodule = new UserModule;
+        $usermodule->fk_users = 1;
+        $usermodule->fk_module = 5;
+        $usermodule->save();
+
+        $moduletime = new ModuleTime;
+        $moduletime->timerange = 1;
+        $moduletime->day = 1;
+        $moduletime->fk_module = 1;
+        $moduletime->save();
+
+        $moduletime = new ModuleTime;
+        $moduletime->timerange = 2;
+        $moduletime->day = 1;
+        $moduletime->fk_module = 2;
+        $moduletime->save();
+
+        $moduletime = new ModuleTime;
+        $moduletime->timerange = 4;
+        $moduletime->day = 1;
+        $moduletime->fk_module = 3;
+        $moduletime->save();
+
+        $moduletime = new ModuleTime;
+        $moduletime->timerange = 2;
+        $moduletime->day = 3;
+        $moduletime->fk_module = 4;
+        $moduletime->save();
+
+
 
         return $this->showView();
     }
