@@ -12,6 +12,17 @@
                 @include('errors.errors')
             </div>
 
+            <!-- Show confirmation if needed -->
+            <?php
+            if(isset($_GET['successfullyAdded']))
+            {
+                echo '
+                    <div class="alert alert-info">
+                        <strong>Success:</strong> The module has been added.</strong>
+                    </div>
+                    ';
+            }
+            ?>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Select Modules
@@ -53,32 +64,34 @@
                     Please make sure that your information is correct.<br />
                     <br />
 
-                    <form>
+                    <form action="/settings/addModuleToDb" method="POST">
+                        {{ csrf_field() }}
                         <div class="form-group">
                             <label for="modulName">Name:</label>
-                            <input type="email" class="form-control" id="email" placeholder="i.e. MAS_A">
+                            <input type="text" class="form-control" name="moduleName" placeholder="i.e. MAS_A">
                         </div>
                         <div class="form-group">
                             <label for="fullName">Full Name:</label>
-                            <input type="password" class="form-control" id="pwd" placeholder="i.e. Mehrdimensionale Analysis">
+                            <input type="text" class="form-control" name="fullName" placeholder="i.e. Mehrdimensionale Analysis">
                         </div>
                         <div class="form-group">
                             <label for="professor">Professor:</label>
-                            <input type="password" class="form-control" id="pwd" placeholder="i.e. Hugo Reyes">
+                            <input type="text" class="form-control" name="professor" placeholder="i.e. Hugo Reyes">
                         </div>
                         <div class="form-group">
                             <label for="room">Room:</label>
 
-                            <input type="password" class="form-control" id="pwd" placeholder="i.e. A1.3">
+                            <input type="text" class="form-control" name="room" placeholder="i.e. A1.3">
 
                         </div>
+
 
                         <div id="timeDropdowns">
                             <div class="form-group">
                                 <div class="form-group">
                                     <label for="sel1">Times:</label>
-                                    <select class="form-control" id="day0" onchange="addInputField(1);">
-                                        <option value="null">Select Day</option>
+                                    <select class="form-control" name="day0" id="day0" onchange="addInputField(1);">
+                                        <option value="">Select Day</option>
                                         <option value="1">Monday</option>
                                         <option value="2">Tuesday</option>
                                         <option value="3">Wednesday</option>
@@ -87,8 +100,8 @@
                                         <option value="3">Sat</option>
                                     </select>
 
-                                    <select class="form-control" id="time0" onchange="addInputField(1);">
-                                        <option value="null">Select Time</option>
+                                    <select class="form-control" name="time0" id="time0" onchange="addInputField(1);">
+                                        <option value="">Select Time</option>
                                         <option value="1">08:15 - 09:50</option>
                                         <option value="3">10:10 - 11:45</option>
                                         <option value="2">13:15 - 14:50</option>
@@ -104,8 +117,9 @@
 
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Add Module</button>
+                            <button type="submit" class="btn btn-primary" id="addModuleSubmit">Add Module</button>
                         </div>
+
                     </form>
 
 

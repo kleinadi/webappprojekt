@@ -60,41 +60,44 @@ var ModuleFinder = function()
 
 function addInputField(nextId)
 {
-    if ($("#day" + (nextId - 1)).val() != "null" &
-        $("#time" + (nextId - 1)).val() != "null" &
-        !$("#day" + nextId).length)
+    if(nextId < 5) // Max 5 inputs
     {
-        console.log("here");
-        var html = '<div class="form-group">' +
-            '<div class="form-group">' +
-            '<select class="form-control" id="day' + nextId + '" onchange="addInputField(' + (nextId + 1) + ');">' +
-                '<option value="null">Select Day</option>' +
+        if ($("#day" + (nextId - 1)).val() != "null" &
+            $("#time" + (nextId - 1)).val() != "null" &
+            !$("#day" + nextId).length)
+        {
+            console.log("here");
+            var html = '<div class="form-group">' +
+                '<div class="form-group">' +
+                '<select class="form-control" name="day' + nextId + '" id="day' + nextId + '" onchange="addInputField(' + (nextId + 1) + ');">' +
+                '<option value="">Select Day</option>' +
                 '<option value="1">Monday</option>' +
                 '<option value="2">Tuesday</option>' +
                 '<option value="3">Wednesday</option>' +
                 '<option value="4">Thursday</option>' +
                 '<option value="5">Friday</option>' +
                 '<option value="6">Sat</option>' +
-            '</select>' +
+                '</select>' +
 
-            '<select class="form-control" id="time' + nextId + '" onchange="addInputField(' + (nextId + 1) + ');">' +
-                '<option value="null">Select Time</option>' +
+                '<select class="form-control" name="time' + nextId + '" id="time' + nextId + '" onchange="addInputField(' + (nextId + 1) + ');">' +
+                '<option value="">Select Time</option>' +
                 '<option value="1">08:15 - 09:50</option>' +
                 '<option value="2">10:10 - 11:45</option>' +
                 '<option value="3">13:15 - 14:50</option>' +
                 '<option value="4">15:15 - 16:50</option>' +
                 '<option value="5">17:00 - 19:45</option>' +
-            '</select>' +
-            '</div>' +
-        '</div>';
+                '</select>' +
+                '</div>' +
+                '</div>';
 
-        $('#timeDropdowns').append(html);
-    }
-    else if($("#day" + (nextId - 1)).val() == "null" &
+            $('#timeDropdowns').append(html);
+        }
+        else if($("#day" + (nextId - 1)).val() == "null" &
             $("#time" + (nextId - 1)).val() == "null" &
             $("#day" + nextId).length)
-    {
-        $("#day" + (nextId - 1)).remove();
-        $("#time" + (nextId - 1)).remove();
+        {
+            $("#day" + (nextId - 1)).remove();
+            $("#time" + (nextId - 1)).remove();
+        }
     }
 }

@@ -53,8 +53,8 @@ bash init.sh
 The folders property of the Homestead.yaml file lists all of the folders you wish to sync with your Homestead Box. 
 ```
 folders:
-- map: ~/Desktop/Development/webappprojekt/lineup
-  to: /home/vagrant/Code/lineup
+- map: ~/yourSharedPath/lineup
+  to: /home/vagrant/lineup
 ```
 This is the folder where we are going to clone the existing Project directory
     
@@ -63,10 +63,10 @@ The sites property allows you to easily map a "domain" to a folder on your Homes
 ```
 sites:
 - map: lineup.dev
-  to: /home/vagrant/Code/lineup/public
+  to: /home/vagrant/lineup/public
 ```
 ###1.9 Cloning the Project repository
-Move to your development folder (/Desktop/Development/) and clone the project repository
+Move to your development folder (~/yourSharedPath/) and clone the project repository
 ```
 git clone https://github.com/geobontognali/webappprojekt.git
 ```
