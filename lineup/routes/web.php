@@ -15,13 +15,16 @@
 
 Auth::routes();
 
+// Main Screen
 Route::get('/', 'HomeController@index');
-
 Route::get('/home', 'HomeController@index');
 
+// Settings Page
 Route::get('/settings', 'SettingsController@showView');
 
 Route::get('/getModuleList/{moduleName}', 'SettingsController@getModuleList');
+
+Route::post('/settings/addModuleToDb', 'SettingsController@addModuleToDb');
 
 // Dummy
 Route::get('/populate', 'SettingsController@populateDummy');
