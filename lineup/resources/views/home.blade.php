@@ -17,50 +17,50 @@
             </div>
             <div class="col-lg-11">
                 <div class="row">
-                    <div class="col-lg-2 rawscroll panelspacing"><h2>Mon</h2><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-lg-2 rawscroll panelspacing"><h2>Tue</h2><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-lg-2 rawscroll panelspacing"><h2>Wed</h2><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-lg-2 rawscroll panelspacing"><h2>Thu</h2><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-lg-2 rawscroll panelspacing"><h2>Fri</h2><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-lg-2 rawscroll panelspacing"><h2 style="color: #72b1ff;" >Sat</h2><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
+                    <div class="col-lg-2 rawscroll panelspacing"><h2>Mon</h2><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d1r1">schedule</div></div></div>
+                    <div class="col-lg-2 rawscroll panelspacing"><h2>Tue</h2><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d2r1">schedule</div></div></div>
+                    <div class="col-lg-2 rawscroll panelspacing"><h2>Wed</h2><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d3r1">schedule</div></div></div>
+                    <div class="col-lg-2 rawscroll panelspacing"><h2>Thu</h2><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d4r1">schedule</div></div></div>
+                    <div class="col-lg-2 rawscroll panelspacing"><h2>Fri</h2><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d5r1">schedule</div></div></div>
+                    <div class="col-lg-2 rawscroll panelspacing"><h2 style="color: #72b1ff;" >Sat</h2><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d6r1">schedule</div></div></div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing bluepanel"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing "><div class="panel-body modulepane">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d1r2">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d2r2">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d3r2">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d4r2">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d5r2">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d6r2">schedule</div></div></div>
                 </div>
 
                 <div id="breakbar"></div>
 
                 <div class="row">
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing bluepanel"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing "><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing bluepanel"><div class="panel-body modulepane">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d1r3">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d2r3">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d3r3">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d4r3">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d5r3">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d6r3">schedule</div></div></div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing bluepanel"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing bluepanel"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing bluepanel"><div class="panel-body modulepane">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d1r4">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d2r4">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d3r4">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d4r4">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d5r4">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d6r4">schedule</div></div></div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing bluepanel"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing bluepanel"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing "><div class="panel-body modulepane">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing bluepanel"><div class="panel-body modulepane">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d1r5">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d2r5">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d3r5">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d4r5">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d5r5">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d6r5">schedule</div></div></div>
                 </div>
             </div>
         </div>
@@ -157,8 +157,11 @@
 
         </div>
 
-
-
+        <?php
+        use App\Http\Controllers\HomeController;
+        $testObject=new HomeController();
+        $test = $testObject->getModules();
+        ?>
 
 
 @endsection

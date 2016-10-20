@@ -134,6 +134,12 @@ class SettingsController extends Controller
         $moduletime->fk_module = 4;
         $moduletime->save();
 
+        $moduletime = new ModuleTime;
+        $moduletime->timerange = 3;
+        $moduletime->day = 5;
+        $moduletime->fk_module = 4;
+        $moduletime->save();
+
 
 
         return $this->showView();
