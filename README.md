@@ -127,6 +127,10 @@ php artisan key:generate
 ```
 
 ###2.6 Database population
+All the migrations have to be executed with following command to create the database structure:
+```
+php artisan migrate
+```
 To fill in the database with some entries go to following url:
 ```
 lineup.dev/populate
