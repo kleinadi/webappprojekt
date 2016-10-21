@@ -16,7 +16,7 @@
 Auth::routes();
 
 // Main Screen
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@showView');
 
 Route::get('/home', 'HomeController@showView');
 
