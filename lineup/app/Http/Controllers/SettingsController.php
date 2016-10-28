@@ -73,13 +73,21 @@ class SettingsController extends Controller
             ->where('fk_users', '=', $userId)
             ->get();
 
-        echo $joinedModules;
+
+        echo '<table class="table table-striped">';
 
         foreach ($joinedModules as $joinedModule)
         {
-            echo $joinedModule->name;
+            echo '<tr>
+                        <td class="table-text"><div>'.$joinedModule->fullname.'</div></td>
+                        <td class="table-text">'.$joinedModule->name.'</td>
+                        <td align="right">
+                            <form action="settings/joinModule/\'+jsonOb[i].id+\'" method="GET">
+                            <button type="submit" class="btn btn-danger" >Unsubscribe</button></form>
+                        </td>
+                  </tr>';
         }
-
+        echo '</table>';
     }
 
     /**
