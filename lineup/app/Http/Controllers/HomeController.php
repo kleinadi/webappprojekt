@@ -42,12 +42,9 @@ class HomeController extends Controller
             ->join('module', 'usermodule.fk_module', '=', 'module.id')
             ->join('moduletime', 'module.id', '=', 'moduletime.fk_module')
             ->select('usermodule.fk_users', 'module.name', 'moduletime.day', 'moduletime.timerange')
-            ->where('fk_users', '=', $userId)
+            ->where('fk_users', '=', 1)
             ->get();
-			
-			//$id = Auth::id();
-			//echo $id;
-			
+
         foreach ($usermodules as $usermodules) {
             $id="d".$usermodules->day."r".$usermodules->timerange;
             echo "<script>document.getElementById('$id').innerHTML = '$usermodules->name'

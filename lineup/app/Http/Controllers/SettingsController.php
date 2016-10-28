@@ -62,6 +62,27 @@ class SettingsController extends Controller
     }
 
     /**
+     * Show joined module list
+     *
+     */
+    public function joinedModuleList()
+    {
+        $userId = Auth::user()->id;
+        $joinedModules = DB::table('usermodule')
+            ->join('module', 'module.id', '=', 'usermodule.fk_module')
+            ->where('fk_users', '=', $userId)
+            ->get();
+
+        echo $joinedModules;
+
+        foreach ($joinedModules as $joinedModule)
+        {
+            echo $joinedModule->name;
+        }
+
+    }
+
+    /**
      * Add a Module to the database
      *
      */

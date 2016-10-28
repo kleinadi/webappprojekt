@@ -52,6 +52,18 @@
                 <script language="javascript">
                     var moduleFinder = new ModuleFinder();
                 </script>
+            </div><div class="panel panel-default">
+                <div class="panel-heading">
+                    Joined Modules
+                </div>
+
+                <div class="panel-body">
+                    <?php
+                        use App\Http\Controllers\SettingsController;
+                        $settingsController = new SettingsController();
+                        $settingsController->joinedModuleList();
+                        ?>
+                </div>
             </div>
 
             <div class="panel panel-default">
