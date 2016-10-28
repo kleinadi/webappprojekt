@@ -46,13 +46,25 @@ class HomeController extends Controller
             ->get();
 
         foreach ($usermodules as $usermodules) {
+
             $id="d".$usermodules->day."r".$usermodules->timerange;
-            echo "<script>document.getElementById('$id').innerHTML = '$usermodules->name'
+            //echo "<script>document.getElementById('$id').innerHTML = '$usermodules->name'
+            //$('#$id').parent().css({'background-color':'#89cbfe'});</script>";
+
+            //$id="m".$usermodules->day."r".$usermodules->timerange;
+            //echo "<script>document.getElementById('$id').innerHTML = '$usermodules->name'
+            //$('#$id').parent().css({'background-color':'#89cbfe'});</script>";
+
+
+
+            $table="<table id='moduleinfotable'>"
+               ."<tr><td colspan='2' id='descriptiontd'>Betriebswitschaft</td></tr>"
+                ."<tr><td class='roomtd'>IUK_U</td><td class='roomtd' style='text-align:right;'>A2.07</td></tr>"
+            ."</table>";
+
+            echo "<script>document.getElementById('$id').innerHTML = '<div style=\"background-color:green;\">asdfasdfasfda</div>'
             $('#$id').parent().css({'background-color':'#89cbfe'});</script>";
 
-            $id="m".$usermodules->day."r".$usermodules->timerange;
-            echo "<script>document.getElementById('$id').innerHTML = '$usermodules->name'
-            $('#$id').parent().css({'background-color':'#89cbfe'});</script>";
         }
         return true;
     }

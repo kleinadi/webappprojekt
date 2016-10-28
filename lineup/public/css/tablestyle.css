@@ -35,6 +35,19 @@
     height: 20px;
 }
 
+#moduleinfotable{
+    width:100%;
+}
+
+#descriptiontd{
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.roomtd{
+    font-style: italic;
+}
+
 
 /* MOBILE VERSION */
 .scheduleTable
