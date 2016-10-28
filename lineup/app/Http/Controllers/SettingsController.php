@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Module;
 use App\UserModule;
 use App\ModuleTime;
+use Auth;
 use DB;
 
 class SettingsController extends Controller
@@ -42,6 +43,22 @@ class SettingsController extends Controller
         $modules = new Module;
         $modules = $modules->where('fullname', 'LIKE', '%'.$moduleName.'%')->get();
         return $modules->toJson();
+    }
+
+    /**
+     * Join Module from settings page
+     *
+     */
+    public function joinModule($moduleId)
+    {
+        $userId = Auth::user()->id;
+
+        $usermodule = new UserModule;
+        $usermodule->fk_users = $userId;
+        $usermodule->fk_module = $moduleId;
+        $usermodule->save();
+
+        return redirect('/settings?successfullyJoined=true');
     }
 
     /**
