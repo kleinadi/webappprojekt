@@ -7,6 +7,8 @@ use App\Module;
 use App\UserModule;
 use App\ModuleTime;
 use DB;
+use Auth;
+
 
 class HomeController extends Controller
 {
@@ -33,14 +35,19 @@ class HomeController extends Controller
      */
     public function getModules()
     {
+        $userId = Auth::user()->id;
+
         //TODO: Query is incorrect
         $usermodules = DB::table('usermodule')
             ->join('module', 'usermodule.fk_module', '=', 'module.id')
             ->join('moduletime', 'module.id', '=', 'moduletime.fk_module')
             ->select('usermodule.fk_users', 'module.name', 'moduletime.day', 'moduletime.timerange')
-            ->where('fk_users', '=', 1)
+            ->where('fk_users', '=', $userId)
             ->get();
-
+			
+			//$id = Auth::id();
+			//echo $id;
+			
         foreach ($usermodules as $usermodules) {
             $id="d".$usermodules->day."r".$usermodules->timerange;
             echo "<script>document.getElementById('$id').innerHTML = '$usermodules->name'
