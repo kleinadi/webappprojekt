@@ -33,12 +33,13 @@ class HomeController extends Controller
      */
     public function getModules()
     {
+        $userId = Auth::user()->id;
         //TODO: Query is incorrect
         $usermodules = DB::table('usermodule')
             ->join('module', 'usermodule.fk_module', '=', 'module.id')
             ->join('moduletime', 'module.id', '=', 'moduletime.fk_module')
             ->select('usermodule.fk_users', 'module.name', 'moduletime.day', 'moduletime.timerange')
-            ->where('fk_users', '=', 1)
+            ->where('fk_users', '=', $userId)
             ->get();
 
         foreach ($usermodules as $usermodules) {
