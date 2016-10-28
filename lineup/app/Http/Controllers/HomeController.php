@@ -9,6 +9,7 @@ use App\ModuleTime;
 use Auth;
 use DB;
 
+
 class HomeController extends Controller
 {
     /**
@@ -35,6 +36,7 @@ class HomeController extends Controller
     public function getModules()
     {
         $userId = Auth::user()->id;
+
         //TODO: Query is incorrect
         $usermodules = DB::table('usermodule')
             ->join('module', 'usermodule.fk_module', '=', 'module.id')

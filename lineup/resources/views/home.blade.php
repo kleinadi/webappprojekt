@@ -46,21 +46,21 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d1r4">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d2r4">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d3r4">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d4r4">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d5r4">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d6r4">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d1r4"></div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d2r4"></div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d3r4"></div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d4r4"></div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d5r4"></div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d6r4"></div></div></div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d1r5">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d2r5">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d3r5">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d4r5">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d5r5">schedule</div></div></div>
-                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d6r5">schedule</div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d1r5"></div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d2r5"></div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d3r5"></div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d4r5"></div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d5r5"></div></div></div>
+                    <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d6r5"></div></div></div>
                 </div>
             </div>
         </div>
@@ -73,84 +73,153 @@
                 <table class="scheduleTable">
                     <tr>
                         <td class="timeCol">08:15 09:50</td>
-                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m1r1"></div></div></td>
                     </tr>
                     <tr>
                         <td class="timeCol">08:15 09:50</td>
-                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m1r2"></div></div></td>
                     </tr>
                     <tr>
                         <td class="timeCol">08:15 09:50</td>
-                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m1r3"></div></div></td>
                     </tr>
                     <tr>
                         <td class="timeCol">08:15 09:50</td>
-                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m1r4"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCol">17:00 19:45</td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m1r5"></div></div></td>
                     </tr>
                 </table>
             </div>
-
 
             <div class="container monday">
                 <h2>Tue</h2>
                 <table class="scheduleTable">
                     <tr>
                         <td class="timeCol">08:15 09:50</td>
-                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m2r1"></div></div></td>
                     </tr>
                     <tr>
                         <td class="timeCol">08:15 09:50</td>
-                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d2r2"></div></div></td>
                     </tr>
                     <tr>
                         <td class="timeCol">08:15 09:50</td>
-                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m2r3"></div></div></td>
                     </tr>
                     <tr>
                         <td class="timeCol">08:15 09:50</td>
-                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m2r4"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCol">17:00 19:45</td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m2r5"></div></div></td>
                     </tr>
                 </table>
             </div>
+
             <div class="container monday">
                 <h2>Wed</h2>
                 <table class="scheduleTable">
                     <tr>
                         <td class="timeCol">08:15 09:50</td>
-                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m3r1"></div></div></td>
                     </tr>
                     <tr>
                         <td class="timeCol">08:15 09:50</td>
-                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m3r2"></div></div></td>
                     </tr>
                     <tr>
                         <td class="timeCol">08:15 09:50</td>
-                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m3r3"></div></div></td>
                     </tr>
                     <tr>
                         <td class="timeCol">08:15 09:50</td>
-                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m3r4"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCol">17:00 19:45</td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m3r5"></div></div></td>
                     </tr>
                 </table>
             </div>
+
             <div class="container monday">
-                <h2>Tue</h2>
+                <h2>Thu</h2>
                 <table class="scheduleTable">
                     <tr>
                         <td class="timeCol">08:15 09:50</td>
-                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m4r1"></div></div></td>
                     </tr>
                     <tr>
                         <td class="timeCol">08:15 09:50</td>
-                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m4r2"></div></div></td>
                     </tr>
                     <tr>
                         <td class="timeCol">08:15 09:50</td>
-                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m4r3"></div></div></td>
                     </tr>
                     <tr>
                         <td class="timeCol">08:15 09:50</td>
-                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane">schedule</div></div></td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m4r4"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCol">17:00 19:45</td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m4r5"></div></div></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="container monday">
+                <h2>Fri</h2>
+                <table class="scheduleTable">
+                    <tr>
+                        <td class="timeCol">08:15 09:50</td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m5r1"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCol">08:15 09:50</td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m5r2"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCol">08:15 09:50</td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m5r3"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCol">08:15 09:50</td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m5r4"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCol">17:00 19:45</td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m5r5"></div></div></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="container monday">
+                <h2>Sat</h2>
+                <table class="scheduleTable">
+                    <tr>
+                        <td class="timeCol">08:15 09:50</td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m6r1"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCol">08:15 09:50</td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m6r2"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCol">08:15 09:50</td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m6r3"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCol">08:15 09:50</td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m6r4"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCol">17:00 19:45</td>
+                        <td><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="m6r5"></div></div></td>
                     </tr>
                 </table>
             </div>
