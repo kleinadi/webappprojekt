@@ -49,6 +49,10 @@ class HomeController extends Controller
             $id="d".$usermodules->day."r".$usermodules->timerange;
             echo "<script>document.getElementById('$id').innerHTML = '$usermodules->name'
             $('#$id').parent().css({'background-color':'#89cbfe'});</script>";
+
+            $id="m".$usermodules->day."r".$usermodules->timerange;
+            echo "<script>document.getElementById('$id').innerHTML = '$usermodules->name'
+            $('#$id').parent().css({'background-color':'#89cbfe'});</script>";
         }
         return true;
     }
