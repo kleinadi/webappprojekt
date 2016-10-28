@@ -8,7 +8,6 @@ use App\UserModule;
 use App\ModuleTime;
 use Auth;
 use DB;
-use Auth;
 
 
 class HomeController extends Controller
@@ -43,7 +42,7 @@ class HomeController extends Controller
             ->join('module', 'usermodule.fk_module', '=', 'module.id')
             ->join('moduletime', 'module.id', '=', 'moduletime.fk_module')
             ->select('usermodule.fk_users', 'module.name', 'moduletime.day', 'moduletime.timerange')
-            ->where('fk_users', '=', 1)
+            ->where('fk_users', '=', $userId)
             ->get();
 
         foreach ($usermodules as $usermodules) {
