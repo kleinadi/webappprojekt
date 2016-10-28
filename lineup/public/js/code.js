@@ -40,7 +40,7 @@ var ModuleFinder = function()
                             '<td class="table-text">'+jsonOb[i].name+'</td>' +
                             '<td align="right">' +
                                 '<form action="settings/joinModule/'+jsonOb[i].id+'" method="GET">' +
-                                '<button type="submit" class="btn btn-primary" >Select Module</button></form>' +
+                                '<button type="submit" class="btn btn-primary" >Subscribe</button></form>' +
                             '</td>' +
                         '</tr>';
                     table.append(row);

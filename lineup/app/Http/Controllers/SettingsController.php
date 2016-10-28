@@ -36,10 +36,7 @@ class SettingsController extends Controller
      */
     public function getModuleList($moduleName)
     {
-        /**
-         * TODO: Change description to longName and moduleday o moduletime in the DB
-         */
-
+        // Gets and returns the list
         $modules = new Module;
         $modules = $modules->where('fullname', 'LIKE', '%'.$moduleName.'%')->get();
         return $modules->toJson();
@@ -53,12 +50,35 @@ class SettingsController extends Controller
     {
         $userId = Auth::user()->id;
 
-        $usermodule = new UserModule;
-        $usermodule->fk_users = $userId;
-        $usermodule->fk_module = $moduleId;
-        $usermodule->save();
+        // Check module that are already been subscribed by the user
+        $userId = Auth::user()->id;
 
-        return redirect('/settings?successfullyJoined=true');
+        $joinedModules = DB::table('usermodule')
+            ->where('fk_users', '=', $userId)
+            ->where('fk_module', '=', $moduleId)
+            ->get();
+
+        if(sizeof($joinedModules) > 0) // When already subscribed to this
+        {
+            return redirect('/settings?successfullyJoined=false');
+        }
+        else
+        {
+            $usermodule = new UserModule;
+            $usermodule->fk_users = $userId;
+            $usermodule->fk_module = $moduleId;
+            $usermodule->save();
+
+            return redirect('/settings?successfullyJoined=true');
+        }
+    }
+
+    public function unsubscribeModule($moduleId)
+    {
+        $usermodule = new UserModule;
+        $usermodule->find($moduleId)->delete();
+
+        return redirect('/settings?successfullyDeleted=true');
     }
 
     /**
@@ -76,16 +96,28 @@ class SettingsController extends Controller
 
         echo '<table class="table table-striped">';
 
-        foreach ($joinedModules as $joinedModule)
+        if(sizeof($joinedModules) > 0)
+        {
+            foreach ($joinedModules as $joinedModule)
+            {
+                echo '<tr>
+                            <td class="table-text"><div>' . $joinedModule->fullname . '</div></td>
+                            <td class="table-text">' . $joinedModule->name . '</td>
+                            <td align="right">
+                                <form action="settings/unsubscribeModule/'.$joinedModule->id.'" method="GET">
+                                    <button type="submit" class="btn btn-danger" >Unsubscribe</button>
+                                </form>
+                            </td>
+                      </tr>';
+            }
+        }
+        else
         {
             echo '<tr>
-                        <td class="table-text"><div>'.$joinedModule->fullname.'</div></td>
-                        <td class="table-text">'.$joinedModule->name.'</td>
-                        <td align="right">
-                            <form action="settings/joinModule/\'+jsonOb[i].id+\'" method="GET">
-                            <button type="submit" class="btn btn-danger" >Unsubscribe</button></form>
-                        </td>
-                  </tr>';
+                        <td class="table-text"><div><i>You haven\'t subscribed any module yet...</i></div></td>
+                        <td></td>
+                        <td align="right"></td>
+                    </tr>';
         }
         echo '</table>';
     }
@@ -164,6 +196,7 @@ class SettingsController extends Controller
         ModuleTime::truncate();
         DB::statement("SET foreign_key_checks=1");
 
+
         $modules = new Module;
         $modules->name = "BIM";
         $modules->fullname = "Betriebsinformation Management";
@@ -199,6 +232,8 @@ class SettingsController extends Controller
         $modules->status = 1;
         $modules->save();
 
+
+        /*
         $usermodule = new UserModule;
         $usermodule->fk_users = 1;
         $usermodule->fk_module = 1;
@@ -244,8 +279,7 @@ class SettingsController extends Controller
         $moduletime->fk_module = 5;
         $moduletime->save();
 
-
-
+           */
         return $this->showView();
     }
 
