@@ -14,7 +14,7 @@
 
             <!-- Show confirmation if needed -->
             <?php
-            if(isset($_GET['successfullyAdded']))
+            if(isset($_GET['successfullyAdded']) and $_GET['successfullyAdded'] == "true")
             {
                 echo '
                     <div class="alert alert-info">
@@ -22,6 +22,25 @@
                     </div>
                     ';
             }
+            if(isset($_GET['successfullyJoined']) and $_GET['successfullyJoined'] == "false")
+            {
+                echo '
+                    <div class="alert alert-danger">
+                        <strong>Wait a minute:</strong> You have already subscribed to this module.</strong>
+                    </div>
+                    ';
+            }
+            if(isset($_GET['successfullyDeleted']) and $_GET['successfullyDeleted'] == "true")
+            {
+                echo '
+                    <div class="alert alert-info">
+                        <strong>Success:</strong> You have unsubscribe the module.</strong>
+                    </div>
+                    ';
+            }
+
+
+
             ?>
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -54,7 +73,7 @@
                 </script>
             </div><div class="panel panel-default">
                 <div class="panel-heading">
-                    Joined Modules
+                    Subscribed Modules
                 </div>
 
                 <div class="panel-body">
