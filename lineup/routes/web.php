@@ -11,8 +11,6 @@
 |
 */
 
-
-
 Auth::routes();
 
 // Main Screen
@@ -27,5 +25,6 @@ Route::get('/getModuleList/{moduleName}', 'SettingsController@getModuleList');
 
 Route::post('/settings/addModuleToDb', 'SettingsController@addModuleToDb');
 
+Route::get('/settings/joinModule/{moduleId}', 'SettingsController@joinModule');
 // Dummy
 Route::get('/populate', 'SettingsController@populateDummy');

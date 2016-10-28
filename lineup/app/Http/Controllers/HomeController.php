@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Module;
 use App\UserModule;
 use App\ModuleTime;
+use Auth;
 use DB;
+use Auth;
+
 
 class HomeController extends Controller
 {
@@ -33,10 +36,12 @@ class HomeController extends Controller
      */
     public function getModules()
     {
+        $userId = Auth::user()->id;
+
         //TODO: Query is incorrect
         $usermodules = DB::table('usermodule')
-            ->join('module', 'usermodule.id', '=', 'module.id')
-            ->join('moduletime', 'module.id', '=', 'moduletime.id')
+            ->join('module', 'usermodule.fk_module', '=', 'module.id')
+            ->join('moduletime', 'module.id', '=', 'moduletime.fk_module')
             ->select('usermodule.fk_users', 'module.name', 'moduletime.day', 'moduletime.timerange')
             ->where('fk_users', '=', 1)
             ->get();
