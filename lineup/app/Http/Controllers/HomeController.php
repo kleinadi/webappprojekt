@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Module;
 use App\UserModule;
 use App\ModuleTime;
+use Auth;
 use DB;
 use Auth;
 
