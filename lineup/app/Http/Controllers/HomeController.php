@@ -35,8 +35,8 @@ class HomeController extends Controller
     {
         //TODO: Query is incorrect
         $usermodules = DB::table('usermodule')
-            ->join('module', 'usermodule.id', '=', 'module.id')
-            ->join('moduletime', 'module.id', '=', 'moduletime.id')
+            ->join('module', 'usermodule.fk_module', '=', 'module.id')
+            ->join('moduletime', 'module.id', '=', 'moduletime.fk_module')
             ->select('usermodule.fk_users', 'module.name', 'moduletime.day', 'moduletime.timerange')
             ->where('fk_users', '=', 1)
             ->get();

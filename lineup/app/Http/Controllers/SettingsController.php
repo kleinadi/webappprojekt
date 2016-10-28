@@ -168,11 +168,6 @@ class SettingsController extends Controller
         $usermodule->fk_module = 5;
         $usermodule->save();
 
-        $usermodule = new UserModule;
-        $usermodule->fk_users = 1;
-        $usermodule->fk_module = 5;
-        $usermodule->save();
-
         $moduletime = new ModuleTime;
         $moduletime->timerange = 1;
         $moduletime->day = 1;
@@ -194,13 +189,13 @@ class SettingsController extends Controller
         $moduletime = new ModuleTime;
         $moduletime->timerange = 2;
         $moduletime->day = 3;
-        $moduletime->fk_module = 4;
+        $moduletime->fk_module = 5;
         $moduletime->save();
 
         $moduletime = new ModuleTime;
         $moduletime->timerange = 3;
         $moduletime->day = 5;
-        $moduletime->fk_module = 4;
+        $moduletime->fk_module = 5;
         $moduletime->save();
 
 
