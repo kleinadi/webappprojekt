@@ -201,6 +201,7 @@ class SettingsController extends Controller
         $modules->name = "BIM";
         $modules->fullname = "Betriebsinformation Management";
         $modules->professor = "Cavala";
+        $modules->room = "A2.09";
         $modules->status = 1;
         $modules->save();
 
@@ -208,6 +209,7 @@ class SettingsController extends Controller
         $modules->name = "IUK_U";
         $modules->fullname = "Unix";
         $modules->professor = "Browser";
+        $modules->room = "B2.01";
         $modules->status = 1;
         $modules->save();
 
@@ -215,6 +217,7 @@ class SettingsController extends Controller
         $modules->name = "IUK_W";
         $modules->fullname = "Webapplikationen";
         $modules->professor = "Browser";
+        $modules->room = "A1.05";
         $modules->status = 1;
         $modules->save();
 
@@ -222,6 +225,7 @@ class SettingsController extends Controller
         $modules->name = "IUK_H";
         $modules->fullname = "Web Programmierung";
         $modules->professor = "Browser";
+        $modules->room = "A2.09";
         $modules->status = 1;
         $modules->save();
 
@@ -229,25 +233,9 @@ class SettingsController extends Controller
         $modules->name = "KOM_III";
         $modules->fullname = "Kommunikation";
         $modules->professor = "Prete";
+        $modules->room = "C2.23";
         $modules->status = 1;
         $modules->save();
-
-
-        /*
-        $usermodule = new UserModule;
-        $usermodule->fk_users = 1;
-        $usermodule->fk_module = 1;
-        $usermodule->save();
-
-        $usermodule = new UserModule;
-        $usermodule->fk_users = 1;
-        $usermodule->fk_module = 2;
-        $usermodule->save();
-
-        $usermodule = new UserModule;
-        $usermodule->fk_users = 1;
-        $usermodule->fk_module = 5;
-        $usermodule->save();
 
         $moduletime = new ModuleTime;
         $moduletime->timerange = 1;
@@ -268,6 +256,12 @@ class SettingsController extends Controller
         $moduletime->save();
 
         $moduletime = new ModuleTime;
+        $moduletime->timerange = 4;
+        $moduletime->day = 6;
+        $moduletime->fk_module = 4;
+        $moduletime->save();
+
+        $moduletime = new ModuleTime;
         $moduletime->timerange = 2;
         $moduletime->day = 3;
         $moduletime->fk_module = 5;
@@ -279,7 +273,7 @@ class SettingsController extends Controller
         $moduletime->fk_module = 5;
         $moduletime->save();
 
-           */
+
         return $this->showView();
     }
 

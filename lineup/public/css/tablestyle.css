@@ -35,17 +35,24 @@
     height: 20px;
 }
 
-#moduleinfotable{
+#descriptioninfo{
+    font-weight: bold;
+    font-size: 120%;
     width:100%;
 }
 
-#descriptiontd{
-    font-weight: bold;
-    font-size: 120%;
+#nameinfo{
+    font-style:italic;
+    float:left;
 }
 
-.roomtd{
-    font-style: italic;
+#roominfo{
+    font-style:italic;
+    float: right;
+}
+
+.modulepane{
+    padding-left:5px;
 }
 
 

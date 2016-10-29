@@ -41,36 +41,26 @@ class HomeController extends Controller
         $usermodules = DB::table('usermodule')
             ->join('module', 'usermodule.fk_module', '=', 'module.id')
             ->join('moduletime', 'module.id', '=', 'moduletime.fk_module')
-            ->select('usermodule.fk_users', 'module.name', 'moduletime.day', 'moduletime.timerange')
+            ->select('usermodule.fk_users', 'module.name', 'module.fullname', 'module.room', 'moduletime.day', 'moduletime.timerange')
             ->where('fk_users', '=', $userId)
             ->get();
 
         foreach ($usermodules as $usermodules) {
 
             $id="d".$usermodules->day."r".$usermodules->timerange;
-            echo "<script>document.getElementById('$id').innerHTML = '$usermodules->name'
-            $('#$id').parent().css({'background-color':'#89cbfe'});</script>";
+            echo "<script>$('#$id').parent().css({'background-color':'#89cbfe'})
+                $('#$id').append('<div id=\"descriptioninfo\">$usermodules->fullname</div>')
+                $('#$id').append('<div id=\"nameinfo\">$usermodules->name</div>')
+                $('#$id').append('<div id=\"roominfo\">$usermodules->room</div>')
+            </script>";
 
             $id="m".$usermodules->day."r".$usermodules->timerange;
-            echo "<script>document.getElementById('$id').innerHTML = '$usermodules->name'
-            $('#$id').parent().css({'background-color':'#89cbfe'});</script>";
-
-            //TODO fix this shit!!
-            //$table="<table id='moduleinfotable'>"
-            //   ."<tr><td colspan='2' id='descriptiontd'>Betriebswitschaft</td></tr>"
-            //    ."<tr><td class='roomtd'>IUK_U</td><td class='roomtd' style='text-align:right;'>A2.07</td></tr>"
-            //."</table>";
-
-            //echo "<script>document.getElementById('$id').innerHTML = '<div style=\"background-color:green;\">asdfasdfasfda</div>"+
-            //    ."<table id=\"moduleinfotable\">"+
-            //    ."<tr><td colspan=\"2\" id=\"descriptiontd\">Betriebswitschaft</td></tr>"+
-            //    ."<tr><td class=\"roomtd\">IUK_U</td><td class=\"roomtd\" style=\"text-align:right;\">A2.07</td></tr>"+
-            //    ."</table>'"+
-            //.$('#$id').parent().css({'background-color':'#89cbfe'});</script>";
+            echo "<script>$('#$id').parent().css({'background-color':'#89cbfe'})
+                $('#$id').append('<div id=\"descriptioninfo\">$usermodules->fullname</div>')
+                $('#$id').append('<div id=\"nameinfo\">$usermodules->name</div>')
+                $('#$id').append('<div id=\"roominfo\">$usermodules->room</div>')
+            </script>";
         }
         return true;
     }
-
-
-
 }
