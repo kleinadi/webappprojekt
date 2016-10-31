@@ -235,6 +235,7 @@ class SettingsController extends Controller
                 echo '<tr>
                             <td class="table-text"><div>' . $joinedModule->fullname . '</div></td>
                             <td class="table-text">' . $joinedModule->name . '</td>
+                            <td class="table-text">' . $joinedModule->location . '</td>
                             <td align="right">
                                 <form action="settings/unsubscribeModule/'.$joinedModule->id.'" method="GET">
                                     <button type="submit" class="btn btn-danger" >Unsubscribe</button>
