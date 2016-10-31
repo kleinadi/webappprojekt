@@ -237,6 +237,9 @@
         $testObject=new HomeController();
         $test = $testObject->getModules();
         ?>
+        <script>
+            timeHighlighting();
+        </script>
 
 
 @endsection

@@ -35,25 +35,28 @@ class HomeController extends Controller
      */
     public function getModules()
     {
-        $userId = Auth::user()->id;
+        $userId = Auth::user()->id; //user authentification
 
-        //TODO: Query is incorrect
+        //query for selecting the modules of the specified user
         $usermodules = DB::table('usermodule')
             ->join('module', 'usermodule.fk_module', '=', 'module.id')
             ->join('moduletime', 'module.id', '=', 'moduletime.fk_module')
-            ->select('usermodule.fk_users', 'module.name', 'module.fullname', 'module.room', 'moduletime.day', 'moduletime.timerange')
+            ->select('usermodule.fk_users', 'module.name', 'module.fullname', 'module.room', 'module.professor', 'module.location', 'moduletime.day', 'moduletime.timerange')
             ->where('fk_users', '=', $userId)
             ->get();
 
+        //insert the modules in the schedule
         foreach ($usermodules as $usermodules) {
 
+            //desktop version
             $id="d".$usermodules->day."r".$usermodules->timerange;
             echo "<script>$('#$id').parent().css({'background-color':'#89cbfe'});
-                $('#$id').append('<div id=\"descriptioninfo\">$usermodules->fullname</div>');
+                $('#$id').append('<div id=\"descriptioninfo\" data-container=\"body\" data-toggle=\"popover\" data-trigger=\"hover\" title=\"Module Info:\" data-html=\"true\" data-content=\"Professor: $usermodules->professor <br> Location: $usermodules->location\">$usermodules->fullname</div>');
                 $('#$id').append('<div id=\"nameinfo\">$usermodules->name</div>');
                 $('#$id').append('<div id=\"roominfo\">$usermodules->room</div>');
             </script>";
 
+            //mobile version
             $id="m".$usermodules->day."r".$usermodules->timerange;
             echo "<script>$('#$id').parent().css({'background-color':'#89cbfe'});
                 $('#$id').append('<div id=\"descriptioninfo\">$usermodules->fullname</div>');
