@@ -14,6 +14,9 @@
 
             <!-- Show confirmation if needed -->
             <?php
+            use App\Http\Controllers\SettingsController;
+            $settingsController = new SettingsController();
+
             if(isset($_GET['successfullyAdded']) and $_GET['successfullyAdded'] == "true")
             {
                 echo '
@@ -39,9 +42,53 @@
                     ';
             }
 
-
-
             ?>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel" style="text-align: center;">Warning!</h4>
+                        </div>
+                        <div class="modal-body">
+                            This module has just been added to the database. Please ensure that the filled data is correct. By doing this
+                            you are making Lineup a better place to be!<br /><br />
+
+                            <form action="/settings/addModuleToDb" method="POST">
+                                {{ csrf_field() }}
+                                <div class="form-group">
+                                    <label for="modulName">Name:</label>
+                                    <input type="text" class="form-control" name="moduleName" placeholder="i.e. MAS_A">
+                                </div>
+                                <div class="form-group">
+                                    <label for="fullName">Full Name:</label>
+                                    <input type="text" class="form-control" name="fullName" placeholder="i.e. Mehrdimensionale Analysis">
+                                </div>
+                                <div class="form-group">
+                                    <label for="professor">Professor:</label>
+                                    <input type="text" class="form-control" name="professor" placeholder="i.e. Hugo Reyes">
+                                </div>
+                                <div class="form-group">
+                                    <label for="room">Room:</label>
+                                    <input type="text" class="form-control" name="room" placeholder="i.e. A1.3">
+
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php
+                $settingsController->reviewModule();
+                ?>
+
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Select Modules
@@ -78,8 +125,6 @@
 
                 <div class="panel-body">
                     <?php
-                        use App\Http\Controllers\SettingsController;
-                        $settingsController = new SettingsController();
                         $settingsController->joinedModuleList();
                         ?>
                 </div>

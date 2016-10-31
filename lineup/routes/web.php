@@ -25,7 +25,7 @@ Route::get('/getModuleList/{moduleName}', 'SettingsController@getModuleList');
 
 Route::post('/settings/addModuleToDb', 'SettingsController@addModuleToDb');
 
-Route::get('/settings/joinModule/{moduleId}', 'SettingsController@joinModule');
+Route::get('/settings/joinModule/{moduleId}', 'SettingsController@subscribeModule');
 
 Route::get('/settings/unsubscribeModule/{moduleId}', 'SettingsController@unsubscribeModule');
 

@@ -20,9 +20,7 @@ class SettingsController extends Controller
     }
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
+     * Show the settings view
      */
     public function showView()
     {
@@ -30,9 +28,7 @@ class SettingsController extends Controller
     }
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
+     * Show the list of matching module (search field)
      */
     public function getModuleList($moduleName)
     {
@@ -43,14 +39,11 @@ class SettingsController extends Controller
     }
 
     /**
-     * Join Module from settings page
-     *
+     * Join/Subscribe module from settings page
      */
-    public function joinModule($moduleId)
+    public function subscribeModule($moduleId)
     {
-        $userId = Auth::user()->id;
-
-        // Check module that are already been subscribed by the user
+        // First check if the module are already been subscribed by the user
         $userId = Auth::user()->id;
 
         $joinedModules = DB::table('usermodule')
@@ -58,9 +51,19 @@ class SettingsController extends Controller
             ->where('fk_module', '=', $moduleId)
             ->get();
 
+        // If so return with error
         if(sizeof($joinedModules) > 0) // When already subscribed to this
         {
             return redirect('/settings?successfullyJoined=false');
+        }
+
+        // Check if the module has been already reviewed
+        $thisModule = new Module;
+        $thisModule = $thisModule->where('id', $moduleId)->get();
+
+        if($thisModule->status == "0")
+        {
+            return redirect('/settings?moduleReview='.$moduleId);
         }
         else
         {
@@ -73,6 +76,14 @@ class SettingsController extends Controller
         }
     }
 
+    public function reviewModule()
+    {
+        echo "<script>$('#myModal').modal();</script>";
+    }
+
+    /**
+     * Unsubscribe from a module
+     */
     public function unsubscribeModule($moduleId)
     {
         $usermodule = new UserModule;
@@ -82,8 +93,7 @@ class SettingsController extends Controller
     }
 
     /**
-     * Show joined module list
-     *
+     * Show the list of the module that are already been subscribed.
      */
     public function joinedModuleList()
     {
