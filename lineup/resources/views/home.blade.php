@@ -15,7 +15,9 @@
                 <div class="panel panel-default rawspacing invisiblepanel"><div class="panel-body">15:15<br /> 16:50</div></div>
                 <div class="panel panel-default rawspacing invisiblepanel"><div class="panel-body">17:00<br /> 19:45</div></div>
             </div>
+
             <div class="col-lg-11">
+                <!-- 1st raw on schedule -->
                 <div class="row">
                     <div class="col-lg-2 rawscroll panelspacing"><h2>Mon</h2><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d1r1"></div></div></div>
                     <div class="col-lg-2 rawscroll panelspacing"><h2>Tue</h2><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d2r1"></div></div></div>
@@ -24,7 +26,7 @@
                     <div class="col-lg-2 rawscroll panelspacing"><h2>Fri</h2><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d5r1"></div></div></div>
                     <div class="col-lg-2 rawscroll panelspacing"><h2 style="color: #72b1ff;" >Sat</h2><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d6r1"></div></div></div>
                 </div>
-
+                <!-- 2nd raw on schedule -->
                 <div class="row">
                     <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d1r2"></div></div></div>
                     <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d2r2"></div></div></div>
@@ -34,8 +36,10 @@
                     <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d6r2"></div></div></div>
                 </div>
 
+                <!-- midday spacer -->
                 <div id="breakbar"></div>
 
+                <!-- 3rd raw on schedule -->
                 <div class="row">
                     <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d1r3"></div></div></div>
                     <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d2r3"></div></div></div>
@@ -45,6 +49,7 @@
                     <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d6r3"></div></div></div>
                 </div>
 
+                <!-- 4th raw on schedule -->
                 <div class="row">
                     <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d1r4"></div></div></div>
                     <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d2r4"></div></div></div>
@@ -54,6 +59,7 @@
                     <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d6r4"></div></div></div>
                 </div>
 
+                <!-- 5th raw on schedule -->
                 <div class="row">
                     <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d1r5"></div></div></div>
                     <div class="col-md-2 rawscroll panelspacing"><div class="panel panel-default rawspacing"><div class="panel-body modulepane" id="d2r5"></div></div></div>
