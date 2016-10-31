@@ -38,7 +38,7 @@ class SettingsController extends Controller
     {
         // Gets and returns the list
         $modules = new Module;
-        $modules = $modules->where('fullname', 'LIKE', '%'.$moduleName.'%')->get();
+        $modules = $modules->where('name', 'LIKE', '%'.$moduleName.'%')->orWhere('fullname', 'LIKE', '%'.$moduleName.'%')->get();
         return $modules->toJson();
     }
 
