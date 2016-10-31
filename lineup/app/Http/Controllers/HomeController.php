@@ -48,17 +48,17 @@ class HomeController extends Controller
         foreach ($usermodules as $usermodules) {
 
             $id="d".$usermodules->day."r".$usermodules->timerange;
-            echo "<script>$('#$id').parent().css({'background-color':'#89cbfe'})
-                $('#$id').append('<div id=\"descriptioninfo\">$usermodules->fullname</div>')
-                $('#$id').append('<div id=\"nameinfo\">$usermodules->name</div>')
-                $('#$id').append('<div id=\"roominfo\">$usermodules->room</div>')
+            echo "<script>$('#$id').parent().css({'background-color':'#89cbfe'});
+                $('#$id').append('<div id=\"descriptioninfo\">$usermodules->fullname</div>');
+                $('#$id').append('<div id=\"nameinfo\">$usermodules->name</div>');
+                $('#$id').append('<div id=\"roominfo\">$usermodules->room</div>');
             </script>";
 
             $id="m".$usermodules->day."r".$usermodules->timerange;
-            echo "<script>$('#$id').parent().css({'background-color':'#89cbfe'})
-                $('#$id').append('<div id=\"descriptioninfo\">$usermodules->fullname</div>')
-                $('#$id').append('<div id=\"nameinfo\">$usermodules->name</div>')
-                $('#$id').append('<div id=\"roominfo\">$usermodules->room</div>')
+            echo "<script>$('#$id').parent().css({'background-color':'#89cbfe'});
+                $('#$id').append('<div id=\"descriptioninfo\">$usermodules->fullname</div>');
+                $('#$id').append('<div id=\"nameinfo\">$usermodules->name</div>');
+                $('#$id').append('<div id=\"roominfo\">$usermodules->room</div>');
             </script>";
         }
         return true;
