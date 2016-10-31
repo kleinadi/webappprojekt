@@ -61,7 +61,7 @@ class SettingsController extends Controller
         $thisModule = new Module;
         $thisModule = $thisModule->where('id', $moduleId)->get();
 
-        if($thisModule->status == "0")
+        if($thisModule[0]->status == 1)
         {
             return redirect('/settings?moduleReview='.$moduleId);
         }
@@ -76,8 +76,35 @@ class SettingsController extends Controller
         }
     }
 
-    public function reviewModule()
+    /**
+     * Show the modal and fills the inputs with the module that need to be reviewed
+     */
+    public function reviewModule($moduleId)
     {
+        // Generate the modal content
+        $thisModule = new Module;
+        $thisModule = $thisModule->where('id', $moduleId)->get();
+
+        echo '
+        <input type="hidden" class="form-control" name="moduleId" value="'.$moduleId.'">
+            <div class="form-group">
+                <label for="modulName">Name:</label>
+                <input type="text" class="form-control" name="moduleName" value="'.$thisModule[0]->name.'">
+            </div>
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" class="form-control" name="fullName" value="'.$thisModule[0]->fullname.'">
+            </div>
+            <div class="form-group">
+                <label for="professor">Professor:</label>
+                <input type="text" class="form-control" name="professor" value="'.$thisModule[0]->professor.'">
+            </div>
+            <div class="form-group">
+                <label for="room">Room:</label>
+                <input type="text" class="form-control" name="room" value="'.$thisModule[0]->room.'">
+            </div>';
+
+        // Opens the modal
         echo "<script>$('#myModal').modal();</script>";
     }
 
@@ -87,7 +114,7 @@ class SettingsController extends Controller
     public function unsubscribeModule($moduleId)
     {
         $usermodule = new UserModule;
-        $usermodule->find($moduleId)->delete();
+        $usermodule->where('fk_module', $moduleId)->delete();
 
         return redirect('/settings?successfullyDeleted=true');
     }
@@ -148,7 +175,7 @@ class SettingsController extends Controller
             ]);
 
 
-        if(isset($filledData->id) & $filledData->id != '')
+        if(isset($filledData->moduleId) & $filledData->moduleId != '')
         {
             /*
              * TODO: Code for updating the module information
