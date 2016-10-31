@@ -58,24 +58,14 @@
 
                             <form action="/settings/addModuleToDb" method="POST">
                                 {{ csrf_field() }}
-                                <div class="form-group">
-                                    <label for="modulName">Name:</label>
-                                    <input type="text" class="form-control" name="moduleName" placeholder="i.e. MAS_A">
-                                </div>
-                                <div class="form-group">
-                                    <label for="fullName">Full Name:</label>
-                                    <input type="text" class="form-control" name="fullName" placeholder="i.e. Mehrdimensionale Analysis">
-                                </div>
-                                <div class="form-group">
-                                    <label for="professor">Professor:</label>
-                                    <input type="text" class="form-control" name="professor" placeholder="i.e. Hugo Reyes">
-                                </div>
-                                <div class="form-group">
-                                    <label for="room">Room:</label>
-                                    <input type="text" class="form-control" name="room" placeholder="i.e. A1.3">
-
-                                </div>
+                                <?php
+                                    if(isset($_GET['moduleReview']))
+                                    {
+                                        $settingsController->reviewModule($_GET['moduleReview']);
+                                    }
+                                ?>
                             </form>
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -84,9 +74,7 @@
                     </div>
                 </div>
             </div>
-            <?php
-                $settingsController->reviewModule();
-                ?>
+
 
 
             <div class="panel panel-default">
