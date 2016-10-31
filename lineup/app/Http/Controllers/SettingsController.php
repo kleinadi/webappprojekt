@@ -170,7 +170,9 @@ class SettingsController extends Controller
                 'fullName' => 'required|max:255',
                 'professor' => 'max:255',
                 'room' => 'required|max:255',
+                'location' => 'required|max:255',
                 'time0' => 'required|max:255',
+                'day0' => 'required|max:255',
                 'day0' => 'required|max:255',
             ]);
 
@@ -190,6 +192,7 @@ class SettingsController extends Controller
             $module->professor = $filledData->professor;
             $module->room = $filledData->room;
             $module->status = 0;
+            $module->location = $filledData->location;
             $module->save();
 
             // Add Moduletime Reference (Max 5 times)
@@ -240,6 +243,7 @@ class SettingsController extends Controller
         $modules->professor = "Cavala";
         $modules->room = "A2.09";
         $modules->status = 1;
+        $modules->location = "St. Gallen";
         $modules->save();
 
         $modules = new Module;
@@ -247,7 +251,8 @@ class SettingsController extends Controller
         $modules->fullname = "Unix";
         $modules->professor = "Browser";
         $modules->room = "B2.01";
-        $modules->status = 1;
+        $modules->status = 0;
+        $modules->location = "Chur";
         $modules->save();
 
         $modules = new Module;
@@ -255,7 +260,8 @@ class SettingsController extends Controller
         $modules->fullname = "Webapplikationen";
         $modules->professor = "Browser";
         $modules->room = "A1.05";
-        $modules->status = 1;
+        $modules->status = 0;
+        $modules->location = "Buchs";
         $modules->save();
 
         $modules = new Module;
@@ -263,7 +269,8 @@ class SettingsController extends Controller
         $modules->fullname = "Web Programmierung";
         $modules->professor = "Browser";
         $modules->room = "A2.09";
-        $modules->status = 1;
+        $modules->status = 0;
+        $modules->location = "St. Gallen";
         $modules->save();
 
         $modules = new Module;
@@ -271,7 +278,8 @@ class SettingsController extends Controller
         $modules->fullname = "Kommunikation";
         $modules->professor = "Prete";
         $modules->room = "C2.23";
-        $modules->status = 1;
+        $modules->status = 0;
+        $modules->location = "Chur";
         $modules->save();
 
         $moduletime = new ModuleTime;

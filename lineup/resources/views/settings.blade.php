@@ -149,6 +149,18 @@
 
                         </div>
 
+                        <div class="form-group">
+                            <label for="room">Location:</label>
+
+                            <select class="form-control" name="location">
+                                <option value="">Select location</option>
+                                <option value="St. Gallen">St. Gallen</option>
+                                <option value="Buchs">Buchs</option>
+                                <option value="Chur">Chur</option>
+                            </select>
+
+                        </div>
+
 
                         <div id="timeDropdowns">
                             <div class="form-group">

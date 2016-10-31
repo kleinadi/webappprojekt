@@ -38,6 +38,7 @@ var ModuleFinder = function()
                         '<tr>' +
                             '<td class="table-text"><div>'+jsonOb[i].fullname+'</div></td>' +
                             '<td class="table-text">'+jsonOb[i].name+'</td>' +
+                            '<td class="table-text">'+jsonOb[i].location+'</td>' +
                             '<td align="right">' +
                                 '<form action="settings/joinModule/'+jsonOb[i].id+'" method="GET">' +
                                 '<button type="submit" class="btn btn-primary" >Subscribe</button></form>' +
