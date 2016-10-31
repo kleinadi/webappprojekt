@@ -7,10 +7,13 @@
 
             <div class="container-fluid" style="text-align: center;"><h1>Settings</h1></div>
 
-            <div class="container">
-                <!-- Display Validation Errors -->
-                @include('errors.errors')
-            </div>
+            <!-- Display Validation Errors -->
+        @if (!isset($_GET['moduleReview']))
+            @include('errors.errors')
+        @endif
+
+
+
 
             <!-- Show confirmation if needed -->
             <?php
@@ -55,6 +58,8 @@
                         <div class="modal-body">
                             This module has just been added to the database. Please ensure that the filled data is correct. By doing this
                             you are making Lineup a better place to be!<br /><br />
+                            <!-- Display Validation Errors -->
+                            @include('errors.errors')
 
                             <form action="/settings/addModuleToDb" method="POST">
                                 {{ csrf_field() }}
@@ -64,13 +69,14 @@
                                         $settingsController->reviewModule($_GET['moduleReview']);
                                     }
                                 ?>
-                            </form>
+
 
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Abort</button>
+                            <button type="submit" class="btn btn-primary">Confirm Data</button>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
