@@ -8,6 +8,7 @@ use App\UserModule;
 use App\ModuleTime;
 use Auth;
 use DB;
+use Validator;
 
 class SettingsController extends Controller
 {
@@ -67,6 +68,13 @@ class SettingsController extends Controller
         }
         else
         {
+            // Increase the status counter
+            $thisModule = new Module;
+            $thisModule = $thisModule->find($moduleId);
+            $thisModule->status = $thisModule->status + 1;
+            $thisModule->save();
+
+            // Add the module for the user
             $usermodule = new UserModule;
             $usermodule->fk_users = $userId;
             $usermodule->fk_module = $moduleId;
@@ -81,11 +89,18 @@ class SettingsController extends Controller
      */
     public function reviewModule($moduleId)
     {
+        // Used for the generation of the HTML code
+        $dayArray = array('', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Sat');
+        $timeArray = array('', '08:15 - 09:50', '10:10 - 11:45', '13:15 - 14:50', '15:15 - 16:50', '17:00 - 19:45');
+
         // Generate the modal content
         $thisModule = new Module;
         $thisModule = $thisModule->where('id', $moduleId)->get();
 
-        echo '
+        $thisModuleTimes = new ModuleTime;
+        $thisModuleTimes = $thisModuleTimes->where('fk_module', $moduleId)->get();
+
+        $html = '<div></div>
         <input type="hidden" class="form-control" name="moduleId" value="'.$moduleId.'">
             <div class="form-group">
                 <label for="modulName">Name:</label>
@@ -102,8 +117,88 @@ class SettingsController extends Controller
             <div class="form-group">
                 <label for="room">Room:</label>
                 <input type="text" class="form-control" name="room" value="'.$thisModule[0]->room.'">
-            </div>';
+            </div>
+            <div class="form-group">
+                <label for="room">Location:</label>
+                <select class="form-control" name="location">
+                    <option value="'.$thisModule[0]->location.'">'.$thisModule[0]->location.'</option>
+                    <option value="St. Gallen">St. Gallen</option>
+                    <option value="Buchs">Buchs</option>
+                    <option value="Chur">Chur</option>
+                </select>
+            </div>
+            
+            ';
 
+        $i = 0;
+        foreach($thisModuleTimes as $thisModuleTime)
+        {
+            $html .= '
+            <div id="timeDropdowns">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="sel1">Times:</label>
+                        <select class="form-control" name="day'.$i.'" id="day'.$i.'">
+                            <option value="'.$thisModuleTime->day.'">'.$dayArray[$thisModuleTime->day].'</option>
+                            <option value="1">Monday</option>
+                            <option value="2">Tuesday</option>
+                            <option value="3">Wednesday</option>
+                            <option value="3">Thursday</option>
+                            <option value="3">Friday</option>
+                            <option value="3">Sat</option>
+                        </select>
+
+                        <select class="form-control" name="time'.$i.'" id="time'.$i.'">
+                            <option value="'.$thisModuleTime->timerange.'">'.$timeArray[$thisModuleTime->timerange].'</option>
+                            <option value="1">08:15 - 09:50</option>
+                            <option value="3">10:10 - 11:45</option>
+                            <option value="2">13:15 - 14:50</option>
+                            <option value="2">15:15 - 16:50</option>
+                            <option value="2">17:00 - 19:45</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            ';
+            
+            $i++;
+        }
+        if($i < 3) // Add time fields to add more times
+        {
+            while($i < 3)
+            {
+                $html .= '
+            <div id="timeDropdowns">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="sel1">Times:</label>
+                        <select class="form-control" name="day'.$i.'" id="day'.$i.'">
+                            <option value="">Select Day</option>
+                            <option value="1">Monday</option>
+                            <option value="2">Tuesday</option>
+                            <option value="3">Wednesday</option>
+                            <option value="3">Thursday</option>
+                            <option value="3">Friday</option>
+                            <option value="3">Sat</option>
+                        </select>
+
+                        <select class="form-control" name="time'.$i.'" id="time'.$i.'">
+                            <option value="">Select Time</option>
+                            <option value="1">08:15 - 09:50</option>
+                            <option value="3">10:10 - 11:45</option>
+                            <option value="2">13:15 - 14:50</option>
+                            <option value="2">15:15 - 16:50</option>
+                            <option value="2">17:00 - 19:45</option>
+                        </select>
+                    </div>
+                </div>
+            </div>';
+                $i++;
+            }
+        }
+
+        // Print HTML
+        echo $html;
         // Opens the modal
         echo "<script>$('#myModal').modal();</script>";
     }
@@ -166,53 +261,76 @@ class SettingsController extends Controller
      */
     public function addModuleToDB(Request $filledData)
     {
-        $this->validate($filledData,[
-                'moduleName' => 'required|max:255',
-                'fullName' => 'required|max:255',
-                'professor' => 'max:255',
-                'room' => 'required|max:255',
-                'location' => 'required|max:255',
-                'time0' => 'required|max:255',
-                'day0' => 'required|max:255',
-                'day0' => 'required|max:255',
-            ]);
+        $validator =  Validator::make($filledData->all(), [
+            'moduleName' => 'required|max:255',
+            'fullName' => 'required|max:255',
+            'professor' => 'max:255',
+            'room' => 'required|max:255',
+            'location' => 'required|max:255',
+            'time0' => 'required|max:255',
+            'day0' => 'required|max:255',
+            'day0' => 'required|max:255',
+        ]);
 
 
+
+        if($validator->fails() & isset($filledData->moduleId) & $filledData->moduleId != '')
+        {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        else if ($validator->fails())
+        {
+            return redirect('/settings')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+
+        // Send data to database
+        $module = new Module;
+
+        // Edit Module
         if(isset($filledData->moduleId) & $filledData->moduleId != '')
         {
-            /*
-             * TODO: Code for updating the module information
-            */
+            $module = $module->find($filledData->moduleId);
+            $status = 2;
+            // Deletes all entry for the times and makes new ones (faster)
+            $moduleTimes = new ModuleTime;
+            $moduleTimes->where('fk_module', $filledData->moduleId)->delete();
         }
+        // Add Module
         else
         {
-            // Add Module
-            $module = new Module;
-            $module->name = $filledData->moduleName;
-            $module->fullname = $filledData->fullName;
-            $module->professor = $filledData->professor;
-            $module->room = $filledData->room;
-            $module->status = 0;
-            $module->location = $filledData->location;
-            $module->save();
-
-            // Add Moduletime Reference (Max 5 times)
-            $timeArray = array($filledData->time0, $filledData->time1, $filledData->time2, $filledData->time3, $filledData->time3);
-            $dayArray = array($filledData->day0, $filledData->day1, $filledData->day2, $filledData->day3, $filledData->day4);
-            for($i = 0; $i<5; $i++)
-            {
-                if($timeArray[$i] != '' & $dayArray[$i] != '')
-                {
-                    $moduleTime = new ModuleTime;
-                    $moduleTime->timerange = $timeArray[$i];
-                    $moduleTime->day = $dayArray[$i];
-                    $moduleTime->fk_module = $module->id;
-                    $moduleTime->save();
-                }
-            }
-
+            $status = 0;
         }
-        return redirect('/settings?successfullyAdded=1');
+
+        // Fill data into db
+        $module->name = $filledData->moduleName;
+        $module->fullname = $filledData->fullName;
+        $module->professor = $filledData->professor;
+        $module->room = $filledData->room;
+        $module->status = $status;
+        $module->location = $filledData->location;
+        $module->save();
+
+        $moduleId = $module->id; // For the redirect at the end
+
+        // Add Moduletime Reference (Max 5 times)
+        $timeArray = array($filledData->time0, $filledData->time1, $filledData->time2, $filledData->time3, $filledData->time3);
+        $dayArray = array($filledData->day0, $filledData->day1, $filledData->day2, $filledData->day3, $filledData->day4);
+        for($i = 0; $i<5; $i++)
+        {
+            if($timeArray[$i] != '' & $dayArray[$i] != '')
+            {
+                $moduleTime = new ModuleTime;
+                $moduleTime->timerange = $timeArray[$i];
+                $moduleTime->day = $dayArray[$i];
+                $moduleTime->fk_module = $module->id;
+                $moduleTime->save();
+            }
+        }
+
+        return redirect('/settings/joinModule/'.$moduleId);
     }
 
     /**

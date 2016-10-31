@@ -1,6 +1,6 @@
 @if (count($errors) > 0)
     <!-- Form Error List -->
-    <div class="alert alert-danger">
+    <div class="alert alert-danger" >
         <strong>OMG dude! Something is wrong here!!</strong>
 
         <br><br>
