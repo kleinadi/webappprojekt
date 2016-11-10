@@ -1,5 +1,5 @@
 # WebAppProjekt
-NTB Webapplikation Projekt
+- NTB Webapplikation Projekt
 
 Schnelle und praktische Lösung für den NTB-Stundenplan.
 
